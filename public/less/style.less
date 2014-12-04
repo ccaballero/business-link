@@ -1,5 +1,6 @@
 @color1: #303030;
 @color2: #214478;
+@color3: #4F8A10;
 
 body, header, footer, section, article, div, p,
 h1, h2, h3, h4, h5, h6, ul, li {
@@ -36,7 +37,6 @@ a {
 }
 
 header {
-    /*background: lighten(@color1, 60%);*/
     padding: 0 0 2.0rem 0;
     .menu {
         margin: 1.0rem 0;
@@ -54,10 +54,15 @@ header {
                     font-size: 0.80rem;
                     color: @color1;
                     float: left;
-                    width: 100%;
-                    padding: 0.25rem 0;
+                    width: 75%;
+                    text-align: right;
+                    padding: 0.25rem 1.0rem;
+                    transition: 0.35s ease-in all;
+
                     &:hover {
                         color: @color2;
+                        background-color: lighten(@color1, 75%);
+                        transform: translateX(1.0rem);
                     }
                 }
             }
@@ -77,35 +82,53 @@ header {
 
 footer {
     background-color: @color2;
-    padding: 2.0rem 0;
     &>div{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
-        align-content: stretch;
-
         div.block {
             float: left;
+            box-sizing: border-box;
+            height: 8.0rem;
+            padding: 1.0rem;
             ul {
                 list-style: none;
                 li {
+                    transition: 0.25s ease-out;
                     a {
                         .font2;
                         font-size: 0.96rem;
                         color: #ffffff;
                     }
+                    &:hover {
+                        transform: translateX(0.5rem);
+                    }
+                }
+            }
+            ul.inline {
+                li {
+                    float: left;
+                    a {
+                        font-size: 0.75rem;
+                        padding: 0 0.5rem;
+                        text-decoration: underline;
+                    }
                 }
             }
             p {
+                padding-top: 1.5rem;
                 .font2;
-                font-size: 0.96rem;
+                font-size: 1.1rem;
                 color: #ffffff;
             }
 
             &:nth-child(1) {
                 width: 50%;
+            }
+            &:nth-child(2) {
+                width: 25%;
+                background-color: darken(@color2,10%);
+            }
+            &:nth-child(3) {
+                width: 25%;
+                background-color: darken(@color2,20%);
             }
         }
     }
@@ -113,15 +136,18 @@ footer {
 
 #content {
     section.steps {
-        /*background: lighten(@color1, 75%);*/
         padding: 5.0rem 0;
         &>article {
+            display: flex;
             div.step {
                 float: left;
                 width: 18%;
-                border-radius: 1.0rem;
-                padding: 0.2rem 0 0.4rem 0;
+                border-radius: 1.2rem;
+                box-sizing: border-box;
+                padding: 1.4rem;
                 margin: 0 3.5%;
+                transition: 0.25s ease-out;
+
                 div {
                     float: right;
                     color: @color2;
@@ -137,6 +163,19 @@ footer {
                 p {
                     .font2;
                     line-height: 1.25rem;
+                    transition: 0.25s ease-out;
+                }
+
+                &:hover {
+                    box-shadow: 1px 1px 3px @color1 inset;
+                    background-color: lighten(@color3,50%);
+
+                    div {
+                        color: @color3;
+                    }
+                    h2 {
+                        color: @color3;
+                    }
                 }
             }
         }
@@ -162,8 +201,16 @@ footer {
                 border-radius: 0.4rem;
                 margin: 1.0rem 0;
                 padding: 0.75rem 0;
-                background-color: #4F8A10;
+                background-color: @color3;
                 color: #DFF2BF;
+                transition: all 0.25s ease-in 0s;
+
+                &:hover {
+                    background-color: darken(@color3, 5%);
+                    text-shadow: 3px 3px 4px @color1;
+                    box-shadow: 3px 3px 9px @color1 inset;
+                    transform: scale(1.05);
+                }
             }
         }
         .list {
