@@ -1,10 +1,13 @@
 @color1: #303030;
 @color2: #214478;
 
-html, body, header, footer, section, article, div, p,
+body, header, footer, section, article, div, p,
 h1, h2, h3, h4, h5, h6, ul, li {
     margin: 0;
     padding: 0;
+}
+
+body {
     font-size: 15pt;
 }
 
@@ -33,7 +36,8 @@ a {
 }
 
 header {
-    padding-bottom: 2.0rem;
+    /*background: lighten(@color1, 60%);*/
+    padding: 0 0 2.0rem 0;
     .menu {
         margin: 1.0rem 0;
         float: right;
@@ -61,22 +65,62 @@ header {
     }
     .logo {
         background-image: url('/img/logo.svg');
-        width: 350px;
+        width: 425px;
         height: 75px;
         background-size: contain;
         float: left;
         margin-top: 1.75rem;
+        margin-left: 1.75rem;
+    }
+}
+
+
+footer {
+    background-color: @color2;
+    padding: 2.0rem 0;
+    &>div{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        align-content: stretch;
+
+        div.block {
+            float: left;
+            ul {
+                list-style: none;
+                li {
+                    a {
+                        .font2;
+                        font-size: 0.96rem;
+                        color: #ffffff;
+                    }
+                }
+            }
+            p {
+                .font2;
+                font-size: 0.96rem;
+                color: #ffffff;
+            }
+
+            &:nth-child(1) {
+                width: 50%;
+            }
+        }
     }
 }
 
 #content {
     section.steps {
+        /*background: lighten(@color1, 75%);*/
+        padding: 5.0rem 0;
         &>article {
             div.step {
                 float: left;
                 width: 18%;
                 border-radius: 1.0rem;
-                padding: 1.0rem 0;
+                padding: 0.2rem 0 0.4rem 0;
                 margin: 0 3.5%;
                 div {
                     float: right;
@@ -84,7 +128,8 @@ header {
                 }
                 h2 {
                     .font1;
-                    font-size: 0.80rem;
+                    font-size: 1.1rem;
+                    font-weight: normal;
                     color: @color2;
                     padding-bottom: 0.25rem;
                 }
@@ -92,6 +137,107 @@ header {
                 p {
                     .font2;
                     line-height: 1.25rem;
+                }
+            }
+        }
+    }
+
+    section.events {
+        h1 {
+            .font1;
+            color: @color2;
+            font-size: 1.1rem;
+            margin: 1.0rem 0;
+        }
+        .menu {
+            float: right;
+            width: 240px;
+            .font2;
+
+            button {
+                float: left;
+                border: none;
+                .font2;
+                width: 100%;
+                border-radius: 0.4rem;
+                margin: 1.0rem 0;
+                padding: 0.75rem 0;
+                background-color: #4F8A10;
+                color: #DFF2BF;
+            }
+        }
+        .list {
+            float: left;
+            width: 720px;
+
+            form {
+                p {
+                    border: 1px solid lighten(@color1,50%);
+                    margin-right: 3.0rem;
+                    padding: 0.5rem;
+                    font-size: 1.2rem;
+                    border-radius: 0.5rem;
+
+                    input[type='text'] {
+                        width: 620px;
+                        font-size: 1.2rem;
+                        padding: 0.25rem;
+                        border: none;
+                    }
+                }
+            }
+
+            &>article {
+                div.event {
+                    border-radius: 0.5rem;
+                    margin-bottom: 3.5rem;
+
+                    div.banner{
+                        float: left;
+                        width: 460px;
+                        height: 150px;
+                        img {
+                            border-radius: 0.5rem;
+                        }
+                    }
+                    div.text {
+                        float: left;
+                        margin-left: 20px;
+                        width: 240px;
+                        h2 {
+                            .font1;
+                            color: @color2;
+                            margin-bottom: 0.5rem;
+                        }
+                        .date {
+                            .font2;
+                        }
+                        .location {
+                            .font2;
+                        }
+                        .social-media {
+                            margin: 0.5rem 0;
+                            ul {
+                                list-style: none;
+                                float: left;
+                                li {
+                                    float: left;
+                                    a {
+                                        float: left;
+                                        padding: 0 0.2rem;
+                                    }
+                                }
+                            }
+                        }
+                        button {
+                            border: none;
+                            .font2;
+                            font-size: 0.85rem;
+                            background-color: @color2;
+                            color: #ffffff;
+                            padding: 0.25rem 0.5rem;
+                        }
+                    }
                 }
             }
         }
