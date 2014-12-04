@@ -30,9 +30,11 @@ section.events.grid
         article(ng-repeat='event in events')
             .event
                 .banner
-                    img(ng-src='{{event.banner}}')
+                    a(href='/#/events/{{event.id}}')
+                        img(ng-src='{{event.banner}}')
                 .text
-                    h2 {{event.title}}
+                    h2
+                        a(href='/#/events/{{event.id}}') {{event.title}}
                     .date {{event.date}}
                     .location {{event.location}}
                     .social-media

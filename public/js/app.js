@@ -12,6 +12,14 @@ var app=angular
                 templateUrl:'/login',
                 controller:'LoginController'
             })
+            .when('/signup',{
+                templateUrl:'/signup',
+                controller:'SignupController'
+            })
+            .when('/events/:event',{
+                templateUrl:'/events/view',
+                controller:'EventsController'
+            })
             .otherwise({
                 redirectTo: '/home'
             });

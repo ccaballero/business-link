@@ -1,0 +1,82 @@
+section.grid.view
+    .list
+        h1 {{event.title}}
+        p
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non
+            | posuere tellus. Donec et diam in mauris facilisis molestie. Etiam
+            | facilisis neque at odio scelerisque, sagittis rutrum risus varius.
+            | Suspendisse potenti. Aliquam erat volutpat. Vivamus tristique
+            | auctor augue. Suspendisse quis posuere nisl, et ultrices diam.
+            | Pellentesque fringilla quam ex, sit amet semper enim imperdiet
+            | vel.
+        p
+            | In ultricies, nisl in tempus aliquam, massa nibh viverra dui,
+            | semper maximus sem nibh sit amet est. Curabitur tristique eu nisi
+            | eu aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing
+            | elit. Nulla vel arcu consequat, tristique sapien eget, finibus
+            | tortor. Donec nec efficitur quam, nec iaculis dui. Sed ipsum
+            | turpis, tincidunt vel risus sit amet, blandit consequat tortor.
+            | Vestibulum eu libero a enim bibendum pharetra eget at tellus.
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+            | et cursus nibh, id auctor neque. Curabitur ac orci et orci
+            | tristique sollicitudin. Ut volutpat mauris in felis sagittis, at
+            | elementum ex pellentesque. Pellentesque nec tincidunt lorem, nec
+            | molestie nibh.
+
+        h2 Location
+        p {{event.location}}
+        iframe(width='720',height='350',frameborder='0',scrolling='no',marginheight='0',marginwidth='0',src='http://www.openstreetmap.org/export/embed.html?bbox=-66.16672754287718%2C-17.37669129383605%2C-66.16375029087067%2C-17.375111891595882&amp;layer=mapnik&amp;marker=-17.375901594418927%2C-66.16523891687393',style='border: 1px solid black')
+        br
+        small
+            a(href='http://www.openstreetmap.org/?mlat=-17.37590&amp;mlon=-66.16524#map=19/-17.37590/-66.16524') Expand map
+        h2 Schedule
+        table
+            tr
+                th &nbsp;
+                th Monday
+                th Tuesday
+                th Wednesday
+                th Thursday
+                th Friday
+            tr
+                th 09:00
+                td Opening
+                td &nbsp;
+                td &nbsp;
+                td &nbsp;
+                td &nbsp;
+            tr
+                th 11:00
+                td.selected 1th meeting
+                td &nbsp;
+                td.selected 3rd meeting
+                td &nbsp;
+                td &nbsp;
+            tr
+                th 13:00
+                td.selected 2nd meeting
+                td &nbsp;
+                td.selected 4th meeting
+                td &nbsp;
+                td Closing Event
+            tr
+                th 15:00
+                td &nbsp;
+                td &nbsp;
+                td &nbsp;
+                td &nbsp;
+                td &nbsp;
+            tr
+                th 18:00
+                td Dinner
+                td &nbsp;
+                td &nbsp;
+                td &nbsp;
+                td &nbsp;
+        br
+        div.text
+            button Register as Buyer
+            button Register as Supplier
+        br
+    .clearfix
+
