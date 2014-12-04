@@ -1,0 +1,100 @@
+@color1: #303030;
+@color2: #214478;
+
+html, body, header, footer, section, article, div, p,
+h1, h2, h3, h4, h5, h6, ul, li {
+    margin: 0;
+    padding: 0;
+    font-size: 15pt;
+}
+
+a {
+    cursor: pointer;
+}
+
+.font1 {
+    font-family: 'Cantata One', serif;
+    font-size: 12pt;
+}
+
+.font2 {
+    font-family: Optima,Segoe,'Segoe UI',Candara,Calibri,Arial,sans-serif;
+    font-size: 13pt;
+    font-weight: normal;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.grid {
+    width: 960px;
+    margin: 0 auto;
+}
+
+header {
+    padding-bottom: 2.0rem;
+    .menu {
+        margin: 1.0rem 0;
+        float: right;
+        width: 200px;
+        ul {
+            list-style: none;
+            float: left;
+            width: 100%;
+            li {
+                float: left;
+                width: 100%;
+                a {
+                    .font1;
+                    font-size: 0.80rem;
+                    color: @color1;
+                    float: left;
+                    width: 100%;
+                    padding: 0.25rem 0;
+                    &:hover {
+                        color: @color2;
+                    }
+                }
+            }
+        }
+    }
+    .logo {
+        background-image: url('/img/logo.svg');
+        width: 350px;
+        height: 75px;
+        background-size: contain;
+        float: left;
+        margin-top: 1.75rem;
+    }
+}
+
+#content {
+    section.steps {
+        &>article {
+            div.step {
+                float: left;
+                width: 18%;
+                border-radius: 1.0rem;
+                padding: 1.0rem 0;
+                margin: 0 3.5%;
+                div {
+                    float: right;
+                    color: @color2;
+                }
+                h2 {
+                    .font1;
+                    font-size: 0.80rem;
+                    color: @color2;
+                    padding-bottom: 0.25rem;
+                }
+
+                p {
+                    .font2;
+                    line-height: 1.25rem;
+                }
+            }
+        }
+    }
+}
+
