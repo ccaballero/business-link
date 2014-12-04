@@ -14,6 +14,7 @@ body {
 
 a {
     cursor: pointer;
+    text-decoration: none;
 }
 
 .font1 {
@@ -38,6 +39,7 @@ a {
 
 header {
     padding: 0 0 2.0rem 0;
+    height: 7.0rem;
     .menu {
         margin: 1.0rem 0;
         float: right;
@@ -135,6 +137,11 @@ footer {
 }
 
 #content {
+    box-sizing: border-box;
+    margin-top: -10.0rem;
+    padding-top: 10.0rem;
+    min-height: 100vh;
+
     section.steps {
         padding: 5.0rem 0;
         &>article {
@@ -180,7 +187,8 @@ footer {
         }
     }
 
-    section.events {
+    section.events,
+    section.login {
         h1 {
             .font1;
             color: @color2;
@@ -215,23 +223,6 @@ footer {
         .list {
             float: left;
             width: 720px;
-
-            form {
-                p {
-                    border: 1px solid lighten(@color1,50%);
-                    margin-right: 3.0rem;
-                    padding: 0.5rem;
-                    font-size: 1.2rem;
-                    border-radius: 0.5rem;
-
-                    input[type='text'] {
-                        width: 620px;
-                        font-size: 1.2rem;
-                        padding: 0.25rem;
-                        border: none;
-                    }
-                }
-            }
 
             &>article {
                 div.event {
@@ -296,6 +287,28 @@ footer {
                 }
             }
         }
+    }
+}
+
+form {
+    p {
+        border: 1px solid lighten(@color1,50%);
+        margin: 0 3.0rem 1.0rem 2.0rem;
+        padding: 0.5rem;
+        font-size: 1.2rem;
+        border-radius: 0.5rem;
+
+        input[type='text'],
+        input[type='password'] {
+            width: 36rem;
+            font-size: 1.2rem;
+            padding: 0.25rem;
+            border: none;
+        }
+    }
+
+    div.offset {
+        margin: 0.5rem 0 1.0rem 2.0rem;
     }
 }
 

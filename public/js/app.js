@@ -8,6 +8,10 @@ var app=angular
                 templateUrl:'/home',
                 controller:'HomeController'
             })
+            .when('/login',{
+                templateUrl:'/login',
+                controller:'LoginController'
+            })
             .otherwise({
                 redirectTo: '/home'
             });

@@ -27,6 +27,7 @@ app.use(express.static(join(__dirname,'bower_components')));
 app.locals.pretty=true;
 
 require('./controllers/home')(app);
+require('./controllers/login')(app);
 
 app.use(function(req,res){
     res.status(404).render('404.jade',{
