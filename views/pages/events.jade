@@ -36,9 +36,10 @@ section.grid.view
             h2 Location
             p {{event.location}}
             iframe(width='720',height='350',frameborder='0',scrolling='no',marginheight='0',marginwidth='0',src='http://www.openstreetmap.org/export/embed.html?bbox=-66.16672754287718%2C-17.37669129383605%2C-66.16375029087067%2C-17.375111891595882&amp;layer=mapnik&amp;marker=-17.375901594418927%2C-66.16523891687393',style='border: 1px solid black')
+            a(href='http://www.openstreetmap.org/?mlat=-17.37590&amp;mlon=-66.16524#map=19/-17.37590/-66.16524')
+                small Expand map
             br
-            small
-                a(href='http://www.openstreetmap.org/?mlat=-17.37590&amp;mlon=-66.16524#map=19/-17.37590/-66.16524') Expand map
+            br
         #schedule(ng-show='env==\'schedule\'')
             h2 Schedule
             table
@@ -154,7 +155,7 @@ section.grid.view
             table
                 tr
                     th Name
-                    th Type
+                    th Description
                     th &nbsp;
                 tr
                     td Molestie S.A.
@@ -169,7 +170,7 @@ section.grid.view
                     td Aliquam a risus id nisl semper finibus.
                     td: a [View Requeriments]
                 tr
-                    td Eget Inc.
+                    td Sem Inc.
                     td Maecenas sed ex facilisis, lacinia sem eu, suscipit lorem.
                     td: a [View Requeriments]
             br
@@ -180,23 +181,11 @@ section.grid.view
             table
                 tr
                     th Name
-                    th Type
+                    th Description
                     th &nbsp;
-                tr
-                    td Eleifend S.A.
-                    td Proin sed eros eget metus ullamcorper eleifend.
-                    td: a [View Brochure]
-                tr
-                    td Mollis Inc.
-                    td Nunc non leo at sem egestas mollis quis quis mi.
-                    td: a [View Brochure]
-                tr
-                    td Est S.A.
-                    td Proin euismod est facilisis, fringilla neque ut, ullamcorper est.
-                    td: a [View Brochure]
-                tr
-                    td Eget Inc.
-                    td Duis eu lorem eget massa pulvinar ullamcorper eget at sapien.
+                tr(ng-repeat='supplier in event.suppliers')
+                    td {{supplier.label}}
+                    td {{supplier.desc}}
                     td: a [View Brochure]
             br
     .clearfix
