@@ -1,6 +1,7 @@
 @color1: #303030;
 @color2: #214478;
 @color3: #4F8A10;
+@color4: #D8000c;
 
 body, header, footer, section, article, div, p,
 h1, h2, h3, h4, h5, h6, ul, li {
@@ -15,6 +16,9 @@ body {
 a {
     cursor: pointer;
     text-decoration: none;
+    &:focus {
+        outline: none;
+    }
 }
 
 .font1 {
@@ -154,7 +158,7 @@ footer {
                 padding: 1.4rem;
                 margin: 0 3.5%;
                 transition: 0.25s ease-out;
-                background-color: lighten(@color3,50%);
+                background-color: lighten(@color2,60%);
 
                 div {
                     float: right;
@@ -213,11 +217,12 @@ footer {
             width: 200px;
             .font2;
 
-            button {
+            a {
                 float: left;
                 border: none;
                 .font2;
                 width: 100%;
+                text-align: center;
                 border-radius: 0.4rem;
                 margin: 1.0rem 0;
                 padding: 0.75rem 0;
@@ -244,6 +249,13 @@ footer {
                 background-color: @color2;
                 color: #ffffff;
                 padding: 0.5rem 1.0rem;
+
+                &.success {
+                    background-color: @color3;
+                }
+                &.error {
+                    background-color: darken(@color4,10%);
+                }
             }
             table {
                 width: 100%;
@@ -261,8 +273,18 @@ footer {
                         text-align: center;
                         background-color: lighten(@color1,75%);
                     }
-                    .selected {
+                    &.selected {
                         background-color: lighten(@color3,30%);
+                    }
+                    &.success {
+                        td {
+                            background-color: lighten(@color3,50%);
+                        }
+                    }
+                    &.error {
+                        td {
+                            background-color: lighten(@color4,50%);
+                        }
                     }
                 }
             }
@@ -287,6 +309,9 @@ footer {
                             .font1;
                             color: @color2;
                             margin: 0 0 0.5rem 0;
+                            a {
+                                color: inherit;
+                            }
                         }
                         .date {
                             .font2;
@@ -333,8 +358,29 @@ form {
         border-radius: 0.5rem;
 
         input[type='text'],
-        input[type='password'] {
+        input[type='password'],
+        input[type='date'], 
+        input[type='time'], 
+        input[type='integer'] {
             width: 36rem;
+            font-size: 1.2rem;
+            padding: 0.25rem;
+            border: none;
+        }
+
+        select {
+            width: 40.8rem;
+            font-size: 1.2rem;
+            padding: 0.25rem;
+            option {
+                font-size: inherit;
+                padding: inherit;
+            }
+        }
+
+        textarea {
+            width: 40rem;
+            height: 10rem;
             font-size: 1.2rem;
             padding: 0.25rem;
             border: none;

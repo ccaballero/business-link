@@ -16,6 +16,10 @@ var app=angular
                 templateUrl:'/signup',
                 controller:'SignupController'
             })
+            .when('/events/new',{
+                templateUrl:'/events/new',
+                controller:'EventsController'
+            })
             .when('/events/:event',{
                 templateUrl:'/events/view',
                 controller:'EventsController'

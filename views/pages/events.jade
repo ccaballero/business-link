@@ -1,6 +1,10 @@
 section.grid.view
     .list
         h1 {{event.title}}
+        div.text
+            button Register as Buyer
+            button Register as Supplier
+        br
         p
             | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non
             | posuere tellus. Donec et diam in mauris facilisis molestie. Etiam
@@ -29,7 +33,7 @@ section.grid.view
         br
         small
             a(href='http://www.openstreetmap.org/?mlat=-17.37590&amp;mlon=-66.16524#map=19/-17.37590/-66.16524') Expand map
-        h2 Schedule
+        h2 Meetings
         table
             tr
                 th &nbsp;
@@ -38,9 +42,11 @@ section.grid.view
                 th Wednesday
                 th Thursday
                 th Friday
+                th Saturday
             tr
                 th 09:00
                 td Opening
+                td Breakfast
                 td &nbsp;
                 td &nbsp;
                 td &nbsp;
@@ -48,20 +54,23 @@ section.grid.view
             tr
                 th 11:00
                 td.selected 1th meeting
+                td.selected 4th meeting
                 td &nbsp;
-                td.selected 3rd meeting
+                td &nbsp;
                 td &nbsp;
                 td &nbsp;
             tr
                 th 13:00
                 td.selected 2nd meeting
+                td.selected 5th meeting
                 td &nbsp;
-                td.selected 4th meeting
                 td &nbsp;
-                td Closing Event
+                td &nbsp;
+                td &nbsp;
             tr
                 th 15:00
-                td &nbsp;
+                td.selected 3rd meeting
+                td.selected 6th meeting
                 td &nbsp;
                 td &nbsp;
                 td &nbsp;
@@ -69,14 +78,67 @@ section.grid.view
             tr
                 th 18:00
                 td Dinner
+                td Closing
                 td &nbsp;
                 td &nbsp;
                 td &nbsp;
                 td &nbsp;
         br
-        div.text
-            button Register as Buyer
-            button Register as Supplier
+        table
+            tr
+                th Label
+                th Date
+                th Start
+                th End
+                th &nbsp;
+            tr.success
+                td 1th meeting
+                td December 15, 2014
+                td 11:00
+                td 13:00
+                td
+                    button.success Join
+                    button.error Decline
+            tr
+                td 2nd meeting
+                td December 15, 2014
+                td 13:00
+                td 15:00
+                td
+                    button.success Join
+                    button.error Decline
+            tr.error
+                td 3rd meeting
+                td December 15, 2014
+                td 15:00
+                td 18:00
+                td
+                    button.success Join
+                    button.error Decline
+            tr
+                td 4th meeting
+                td December 15, 2014
+                td 11:00
+                td 13:00
+                td
+                    button.success Join
+                    button.error Decline
+            tr
+                td 5th meeting
+                td December 15, 2014
+                td 13:00
+                td 15:00
+                td
+                    button.success Join
+                    button.error Decline
+            tr
+                td 6th meeting
+                td December 15, 2014
+                td 15:00
+                td 18:00
+                td
+                    button.success Join
+                    button.error Decline
         br
     .clearfix
 

@@ -1,0 +1,39 @@
+section.grid.login
+    h1 Create your Event
+    .list
+        form
+            h1 Event Information
+            h2 Name:
+            p
+                input(type='text')
+            h2 Description:
+            p
+                textarea
+            h2 Location:
+            p
+                iframe(width='650',height='350',frameborder='0',scrolling='no',marginheight='0',marginwidth='0',src='http://www.openstreetmap.org/export/embed.html?bbox=-66.18576049804688%2C-17.41829608057531%2C-66.11434936523438%2C-17.38025193836915&amp;layer=mapnik&amp;marker=-17.375901594418927%2C-66.16523891687393',style='border: none')
+            h1 Meeting Information
+            h2 Label:
+            p
+                input(type='text')
+            h2 Date:
+            p
+                input(type='date')
+            h2 Start time:
+            p
+                input(type='time')
+            h2 Duration (min):
+            p
+                input(type='integer')
+            h2 Type:
+            p
+                select
+                    option Informal
+                    option Business
+            button Add Meeting
+            div.offset
+                br
+            div.offset
+                button(type='submit') Create Event
+    .clearfix
+
