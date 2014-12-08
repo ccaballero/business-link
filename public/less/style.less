@@ -88,11 +88,11 @@ header {
 
 footer {
     background-color: @color2;
-    &>div{
+
+    &>.grid {
         div.block {
             float: left;
             box-sizing: border-box;
-            height: 8.0rem;
             padding: 1.0rem;
             ul {
                 list-style: none;
@@ -100,7 +100,7 @@ footer {
                     transition: 0.25s ease-out;
                     a {
                         .font2;
-                        font-size: 0.96rem;
+                        font-size: 0.76rem;
                         color: #ffffff;
                     }
                     &:hover {
@@ -118,6 +118,11 @@ footer {
                     }
                 }
             }
+            h2 {
+                .font2;
+                font-size: 1.2rem;
+                color: #ffffff;
+            }
             p {
                 padding-top: 1.5rem;
                 .font2;
@@ -126,15 +131,16 @@ footer {
             }
 
             &:nth-child(1) {
-                width: 50%;
+                width: 25%;
             }
             &:nth-child(2) {
                 width: 25%;
-                background-color: darken(@color2,10%);
             }
             &:nth-child(3) {
                 width: 25%;
-                background-color: darken(@color2,20%);
+            }
+            &:nth-child(4) {
+                width: 25%;
             }
         }
     }
@@ -147,7 +153,7 @@ footer {
     min-height: 100vh;
 
     section.steps {
-        padding: 5.0rem 0;
+        padding: 2.0rem 0;
         &>article {
             display: flex;
             div.step {
@@ -210,6 +216,7 @@ footer {
         p,small {
             .font2;
             font-size: 1.0rem;
+            line-height: 1.3rem;
             text-align: justify;
         }
         .menu {
