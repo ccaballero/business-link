@@ -224,7 +224,34 @@ footer {
             width: 200px;
             .font2;
 
-            a {
+            ul {
+                float: left;
+                list-style: none;
+                width: 100%;
+                li {
+                    float: left;
+                    width: 100%;
+                    a {
+                        float: left;
+                        .font2;
+                        font-size: 0.9rem;
+                        padding: 0.75rem;
+                        width: 100%;
+                        box-sizing: border-box;
+                        background-color: @color2;
+                        color: #ffffff;
+                        border-bottom: 1px solid #ffffff;
+                        transition: all 0.25s ease-in 0s;
+
+                        &:hover {
+                            background-color: darken(@color2, 5%);
+                            transform: translateX(0.25rem);
+                        }
+                    }
+                }
+            }
+
+            a.button {
                 float: left;
                 border: none;
                 .font2;
@@ -277,11 +304,19 @@ footer {
                     td {
                         .font2;
                         font-size: 0.92rem;
-                        text-align: center;
                         background-color: lighten(@color1,75%);
-                    }
-                    &.selected {
-                        background-color: lighten(@color3,30%);
+                        &.center {
+                            text-align: center;
+                        }
+                        &.selected {
+                            text-align: center;
+                            background-color: lighten(@color3,50%);
+                        }
+
+                        a {
+                            color: @color2;
+                            font-weight: bold;
+                        }
                     }
                     &.success {
                         td {

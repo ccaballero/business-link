@@ -1,144 +1,203 @@
 section.grid.view
+    .menu
+        ul
+            li: a(ng-click='tab(\'general\')') General Information
+            li: a(ng-click='tab(\'schedule\')') Schedule
+            li: a(ng-click='tab(\'buyers\')') Buyers
+            li: a(ng-click='tab(\'suppliers\')') Suppliers
     .list
         h1 {{event.title}}
-        div.text
-            button Register as Buyer
-            button Register as Supplier
-        br
-        p
-            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non
-            | posuere tellus. Donec et diam in mauris facilisis molestie. Etiam
-            | facilisis neque at odio scelerisque, sagittis rutrum risus varius.
-            | Suspendisse potenti. Aliquam erat volutpat. Vivamus tristique
-            | auctor augue. Suspendisse quis posuere nisl, et ultrices diam.
-            | Pellentesque fringilla quam ex, sit amet semper enim imperdiet
-            | vel.
-        p
-            | In ultricies, nisl in tempus aliquam, massa nibh viverra dui,
-            | semper maximus sem nibh sit amet est. Curabitur tristique eu nisi
-            | eu aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing
-            | elit. Nulla vel arcu consequat, tristique sapien eget, finibus
-            | tortor. Donec nec efficitur quam, nec iaculis dui. Sed ipsum
-            | turpis, tincidunt vel risus sit amet, blandit consequat tortor.
-            | Vestibulum eu libero a enim bibendum pharetra eget at tellus.
-            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-            | et cursus nibh, id auctor neque. Curabitur ac orci et orci
-            | tristique sollicitudin. Ut volutpat mauris in felis sagittis, at
-            | elementum ex pellentesque. Pellentesque nec tincidunt lorem, nec
-            | molestie nibh.
+        div
+            img(ng-src='{{event.banner}}')
+        #general(ng-show='env==\'general\'')
+            h2 General Information
+            p
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non
+                | posuere tellus. Donec et diam in mauris facilisis molestie. Etiam
+                | facilisis neque at odio scelerisque, sagittis rutrum risus varius.
+                | Suspendisse potenti. Aliquam erat volutpat. Vivamus tristique
+                | auctor augue. Suspendisse quis posuere nisl, et ultrices diam.
+                | Pellentesque fringilla quam ex, sit amet semper enim imperdiet
+                | vel.
+            p
+                | In ultricies, nisl in tempus aliquam, massa nibh viverra dui,
+                | semper maximus sem nibh sit amet est. Curabitur tristique eu nisi
+                | eu aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing
+                | elit. Nulla vel arcu consequat, tristique sapien eget, finibus
+                | tortor. Donec nec efficitur quam, nec iaculis dui. Sed ipsum
+                | turpis, tincidunt vel risus sit amet, blandit consequat tortor.
+                | Vestibulum eu libero a enim bibendum pharetra eget at tellus.
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                | et cursus nibh, id auctor neque. Curabitur ac orci et orci
+                | tristique sollicitudin. Ut volutpat mauris in felis sagittis, at
+                | elementum ex pellentesque. Pellentesque nec tincidunt lorem, nec
+                | molestie nibh.
 
-        h2 Location
-        p {{event.location}}
-        iframe(width='720',height='350',frameborder='0',scrolling='no',marginheight='0',marginwidth='0',src='http://www.openstreetmap.org/export/embed.html?bbox=-66.16672754287718%2C-17.37669129383605%2C-66.16375029087067%2C-17.375111891595882&amp;layer=mapnik&amp;marker=-17.375901594418927%2C-66.16523891687393',style='border: 1px solid black')
-        br
-        small
-            a(href='http://www.openstreetmap.org/?mlat=-17.37590&amp;mlon=-66.16524#map=19/-17.37590/-66.16524') Expand map
-        h2 Meetings
-        table
-            tr
-                th &nbsp;
-                th Monday
-                th Tuesday
-                th Wednesday
-                th Thursday
-                th Friday
-                th Saturday
-            tr
-                th 09:00
-                td Opening
-                td Breakfast
-                td &nbsp;
-                td &nbsp;
-                td &nbsp;
-                td &nbsp;
-            tr
-                th 11:00
-                td.selected 1th meeting
-                td.selected 4th meeting
-                td &nbsp;
-                td &nbsp;
-                td &nbsp;
-                td &nbsp;
-            tr
-                th 13:00
-                td.selected 2nd meeting
-                td.selected 5th meeting
-                td &nbsp;
-                td &nbsp;
-                td &nbsp;
-                td &nbsp;
-            tr
-                th 15:00
-                td.selected 3rd meeting
-                td.selected 6th meeting
-                td &nbsp;
-                td &nbsp;
-                td &nbsp;
-                td &nbsp;
-            tr
-                th 18:00
-                td Dinner
-                td Closing
-                td &nbsp;
-                td &nbsp;
-                td &nbsp;
-                td &nbsp;
-        br
-        table
-            tr
-                th Label
-                th Date
-                th Start
-                th End
-                th &nbsp;
-            tr.success
-                td 1th meeting
-                td December 15, 2014
-                td 11:00
-                td 13:00
-                td
-                    button.success Join
-                    button.error Decline
-            tr
-                td 2nd meeting
-                td December 15, 2014
-                td 13:00
-                td 15:00
-                td
-                    button.success Join
-                    button.error Decline
-            tr.error
-                td 3rd meeting
-                td December 15, 2014
-                td 15:00
-                td 18:00
-                td
-                    button.success Join
-                    button.error Decline
-            tr
-                td 4th meeting
-                td December 15, 2014
-                td 11:00
-                td 13:00
-                td
-                    button.success Join
-                    button.error Decline
-            tr
-                td 5th meeting
-                td December 15, 2014
-                td 13:00
-                td 15:00
-                td
-                    button.success Join
-                    button.error Decline
-            tr
-                td 6th meeting
-                td December 15, 2014
-                td 15:00
-                td 18:00
-                td
-                    button.success Join
-                    button.error Decline
-        br
+            h2 Location
+            p {{event.location}}
+            iframe(width='720',height='350',frameborder='0',scrolling='no',marginheight='0',marginwidth='0',src='http://www.openstreetmap.org/export/embed.html?bbox=-66.16672754287718%2C-17.37669129383605%2C-66.16375029087067%2C-17.375111891595882&amp;layer=mapnik&amp;marker=-17.375901594418927%2C-66.16523891687393',style='border: 1px solid black')
+            br
+            small
+                a(href='http://www.openstreetmap.org/?mlat=-17.37590&amp;mlon=-66.16524#map=19/-17.37590/-66.16524') Expand map
+        #schedule(ng-show='env==\'schedule\'')
+            h2 Schedule
+            table
+                tr
+                    th &nbsp;
+                    th Monday
+                    th Tuesday
+                    th Wednesday
+                    th Thursday
+                    th Friday
+                    th Saturday
+                tr
+                    th 09:00
+                    td.center Opening
+                    td.center Breakfast
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                tr
+                    th 11:00
+                    td.selected 1th meeting
+                    td.selected 4th meeting
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                tr
+                    th 13:00
+                    td.selected 2nd meeting
+                    td.selected 5th meeting
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                tr
+                    th 15:00
+                    td.selected 3rd meeting
+                    td.selected 6th meeting
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                tr
+                    th 18:00
+                    td.center Dinner
+                    td.center Closing
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+                    td &nbsp;
+            br
+            table
+                tr
+                    th Label
+                    th Date
+                    th Start
+                    th End
+                    th &nbsp;
+                tr.success
+                    td 1th meeting
+                    td December 15, 2014
+                    td.center 11:00
+                    td.center 13:00
+                    td
+                        button.success Join
+                        button.error Decline
+                tr
+                    td 2nd meeting
+                    td December 15, 2014
+                    td.center 13:00
+                    td.center 15:00
+                    td
+                        button.success Join
+                        button.error Decline
+                tr.error
+                    td 3rd meeting
+                    td December 15, 2014
+                    td.center 15:00
+                    td.center 18:00
+                    td
+                        button.success Join
+                        button.error Decline
+                tr
+                    td 4th meeting
+                    td December 15, 2014
+                    td.center 11:00
+                    td.center 13:00
+                    td
+                        button.success Join
+                        button.error Decline
+                tr
+                    td 5th meeting
+                    td December 15, 2014
+                    td.center 13:00
+                    td.center 15:00
+                    td
+                        button.success Join
+                        button.error Decline
+                tr
+                    td 6th meeting
+                    td December 15, 2014
+                    td.center 15:00
+                    td.center 18:00
+                    td
+                        button.success Join
+                        button.error Decline
+            br
+        #buyers(ng-show='env==\'buyers\'')
+            .text
+                button Register as Buyer
+            br
+            table
+                tr
+                    th Name
+                    th Type
+                    th &nbsp;
+                tr
+                    td Molestie S.A.
+                    td Duis in purus sit amet nunc molestie rutrum.
+                    td: a [View Requeriments]
+                tr
+                    td Quis Inc.
+                    td Integer et turpis quis purus mollis vulputate.
+                    td: a [View Requeriments]
+                tr
+                    td Nisl S.A.
+                    td Aliquam a risus id nisl semper finibus.
+                    td: a [View Requeriments]
+                tr
+                    td Eget Inc.
+                    td Maecenas sed ex facilisis, lacinia sem eu, suscipit lorem.
+                    td: a [View Requeriments]
+            br
+        #suppliers(ng-show='env==\'suppliers\'')
+            .text
+                button Register as Supplier
+            br
+            table
+                tr
+                    th Name
+                    th Type
+                    th &nbsp;
+                tr
+                    td Eleifend S.A.
+                    td Proin sed eros eget metus ullamcorper eleifend.
+                    td: a [View Brochure]
+                tr
+                    td Mollis Inc.
+                    td Nunc non leo at sem egestas mollis quis quis mi.
+                    td: a [View Brochure]
+                tr
+                    td Est S.A.
+                    td Proin euismod est facilisis, fringilla neque ut, ullamcorper est.
+                    td: a [View Brochure]
+                tr
+                    td Eget Inc.
+                    td Duis eu lorem eget massa pulvinar ullamcorper eget at sapien.
+                    td: a [View Brochure]
+            br
     .clearfix
 
